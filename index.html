@@ -291,7 +291,7 @@
                                     data[pixelIndex] = 5; data[pixelIndex + 1] = 5; data[pixelIndex + 2] = 15; data[pixelIndex + 3] = 255;
                                 } else {
                                     const color = currentPalette[iterations % 256];
-                                    const [h, s, l] = color.match(/\d+/g).map(Number);
+                                    const [h, s, l] = color.match(/\d+(?:\.\d+)?/g).map(Number);
                                     const [r, g, b] = hslToRgb(h / 360, s / 100, l / 100);
                                     data[pixelIndex] = r; data[pixelIndex + 1] = g; data[pixelIndex + 2] = b; data[pixelIndex + 3] = 255;
                                 }
